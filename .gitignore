@@ -1,0 +1,48 @@
+# Dart / Flutter (workspace root)
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/doc/api/
+# Root pubspec.lock is committed; per-package locks must not exist in a workspace.
+apps/*/pubspec.lock
+packages/*/pubspec.lock
+
+# IDE (melos bootstrap regenerates IntelliJ files)
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+.history
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Release signing / secrets — never commit
+key.properties
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+.env
+.env.*
+
+# Claude Code: per-user settings stay local; shared .claude/ config is tracked
+.claude/settings.local.json
+
+# Vendored third-party Claude skills
+.claude/skills/browser-use-0.12.6/
+.claude/skills/claude-mem-12.1.0/
+.claude/skills/ui-ux-pro-max-skill-2.5.0/
+.claude/skills/impeccable/

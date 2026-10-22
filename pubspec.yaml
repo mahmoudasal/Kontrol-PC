@@ -1,0 +1,45 @@
+name: kontrol_workspace
+description: "Kontrol: PC Control Kit monorepo."
+publish_to: none
+
+environment:
+  sdk: ^3.13.2
+
+workspace:
+  - apps/mobile
+  - apps/desktop
+  - packages/kontrol_protocol
+  - packages/kontrol_ui
+
+dev_dependencies:
+  melos: ^8.9.0
+
+melos:
+  scripts:
+    analyze:
+      description: Run static analysis in every package.
+      exec: flutter analyze .
+
+    test:
+      description: Run tests in every package that has a test directory.
+      steps:
+        - test:flutter
+        - test:dart
+
+    test:flutter:
+      description: Run Flutter tests.
+      exec: flutter test
+      packageFilters:
+        flutter: true
+        dirExists: test
+
+    test:dart:
+      description: Run pure-Dart tests.
+      exec: dart test
+      packageFilters:
+        flutter: false
+        dirExists: test
+
+    format:
+      description: Format all Dart code.
+      run: dart format .
