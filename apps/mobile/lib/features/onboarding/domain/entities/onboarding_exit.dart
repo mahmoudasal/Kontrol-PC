@@ -1,0 +1,1 @@
+enum OnboardingExit { devices, pair }
