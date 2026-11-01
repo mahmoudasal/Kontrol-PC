@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — Settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 390px; min-height: 1240px; box-sizing: border-box; background: #0B0C0E; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; gap: 22px; padding: 52px 16px 40px">
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <a href="Main.dc.html" aria-label="Back to remotes" style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #F2F4F7; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>
+    </a>
+    <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">Settings</h1>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h2 style="margin: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Touchpad</h2>
+    <div style="border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 4px 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 12px 0">
+        <div style="display: flex; justify-content: space-between"><label for="s-sens" style="font-size: 15px; font-weight: 500">Pointer sensitivity</label><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #A3AAB6">1.4×</span></div>
+        <div style="position: relative; height: 32px; display: flex; align-items: center">
+          <div style="position: absolute; left: 0; right: 0; height: 6px; border-radius: 6px; background: #262A31"></div>
+          <div style="position: absolute; left: 0; width: 60%; height: 6px; border-radius: 6px; background: #4C8DFF"></div>
+          <div style="position: absolute; left: calc(60% - 11px); width: 22px; height: 22px; border-radius: 50%; background: #F2F4F7"></div>
+          <input id="s-sens" type="range" min="0" max="100" value="60" style="position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0">
+        </div>
+      </div>
+      <div style="height: 1px; background: #262A31"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 12px 0">
+        <div style="display: flex; justify-content: space-between"><label for="s-scroll" style="font-size: 15px; font-weight: 500">Scroll speed</label><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #A3AAB6">1.0×</span></div>
+        <div style="position: relative; height: 32px; display: flex; align-items: center">
+          <div style="position: absolute; left: 0; right: 0; height: 6px; border-radius: 6px; background: #262A31"></div>
+          <div style="position: absolute; left: 0; width: 42%; height: 6px; border-radius: 6px; background: #4C8DFF"></div>
+          <div style="position: absolute; left: calc(42% - 11px); width: 22px; height: 22px; border-radius: 50%; background: #F2F4F7"></div>
+          <input id="s-scroll" type="range" min="0" max="100" value="42" style="position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0">
+        </div>
+      </div>
+      <div style="height: 1px; background: #262A31"></div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Natural scrolling</span><span style="font-size: 13px; color: #8A919E">Content follows your fingers</span></span>
+        <button type="button" aria-pressed="false" aria-label="Natural scrolling" style="width: 52px; height: 32px; flex: none; border-radius: 999px; border: 0; background: #3A404A; padding: 3px; display: flex; justify-content: flex-start; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #C9CED6"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h2 style="margin: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Feedback</h2>
+    <div style="border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 0 16px">
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Haptics</span>
+        <button type="button" aria-pressed="true" aria-label="Haptics" style="width: 52px; height: 32px; flex: none; border-radius: 999px; border: 0; background: #4C8DFF; padding: 3px; display: flex; justify-content: flex-end; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #05101F"></span></button>
+      </div>
+      <div style="height: 1px; background: #262A31"></div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Keep screen awake</span><span style="font-size: 13px; color: #8A919E">While a remote is open</span></span>
+        <button type="button" aria-pressed="true" aria-label="Keep screen awake" style="width: 52px; height: 32px; flex: none; border-radius: 999px; border: 0; background: #4C8DFF; padding: 3px; display: flex; justify-content: flex-end; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #05101F"></span></button>
+      </div>
+      <div style="height: 1px; background: #262A31"></div>
+      <button type="button" style="width: 100%; display: flex; align-items: center; gap: 12px; min-height: 60px; border: 0; background: none; color: inherit; font: inherit; padding: 0; text-align: left; cursor: pointer">
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Volume keys</span>
+        <span style="font-size: 14px; color: #A3AAB6">Slides in Presentation</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A919E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+      </button>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h2 style="margin: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Appearance</h2>
+    <div style="border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 14px 16px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span id="lbl-theme" style="font-size: 15px; font-weight: 500">Theme</span>
+        <div role="radiogroup" aria-labelledby="lbl-theme" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #0B0C0E">
+          <button type="button" role="radio" aria-checked="true" style="height: 40px; border-radius: 10px; border: 0; background: #262A31; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Dark</button>
+          <button type="button" role="radio" aria-checked="false" style="height: 40px; border-radius: 10px; border: 0; background: none; color: #A3AAB6; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Light</button>
+          <button type="button" role="radio" aria-checked="false" style="height: 40px; border-radius: 10px; border: 0; background: none; color: #A3AAB6; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">System</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span id="lbl-lang" style="font-size: 15px; font-weight: 500">Language</span>
+        <div role="radiogroup" aria-labelledby="lbl-lang" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #0B0C0E">
+          <button type="button" role="radio" aria-checked="true" style="height: 40px; border-radius: 10px; border: 0; background: #262A31; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">English</button>
+          <button type="button" role="radio" aria-checked="false" lang="ar" dir="rtl" style="height: 40px; border-radius: 10px; border: 0; background: none; color: #A3AAB6; font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">العربية</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h2 style="margin: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Devices</h2>
+    <div style="border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 0 16px">
+      <button type="button" style="width: 100%; display: flex; align-items: center; gap: 12px; min-height: 60px; border: 0; background: none; color: inherit; font: inherit; padding: 0; text-align: left; cursor: pointer">
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Paired PCs</span>
+        <span style="font-size: 14px; color: #A3AAB6">3</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A919E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+      </button>
+      <div style="height: 1px; background: #262A31"></div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Reconnect on launch</span><span style="font-size: 13px; color: #8A919E">Opens straight to your last PC</span></span>
+        <button type="button" aria-pressed="true" aria-label="Reconnect on launch" style="width: 52px; height: 32px; flex: none; border-radius: 999px; border: 0; background: #4C8DFF; padding: 3px; display: flex; justify-content: flex-end; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #05101F"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h2 style="margin: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">About</h2>
+    <div style="border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 0 16px">
+      <a href="#github" style="display: flex; align-items: center; gap: 12px; min-height: 60px; color: inherit; text-decoration: none">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A3AAB6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4"></path></svg>
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Source code on GitHub</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A919E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+      </a>
+      <div style="height: 1px; background: #262A31"></div>
+      <a href="#licenses" style="display: flex; align-items: center; gap: 12px; min-height: 60px; color: inherit; text-decoration: none">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A3AAB6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 13h7M9 17h5"></path></svg>
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Open-source licenses</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A919E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+      </a>
+      <div style="height: 1px; background: #262A31"></div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A3AAB6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+        <span style="flex: 1; font-size: 15px; font-weight: 500">Version</span>
+        <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #A3AAB6">[x.y.z]</span>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
