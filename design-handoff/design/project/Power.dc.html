@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — Power</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0C0E; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; gap: 20px; padding: 52px 16px 28px; overflow: hidden">
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <a href="Main.dc.html" aria-label="Back to remotes" style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #F2F4F7; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>
+    </a>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+      <span style="font-size: 17px; font-weight: 600">Power</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #5BE3A8"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97"></span>Connected · Living-Room PC</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 20px; background: #15171B; border: 1px solid #262A31">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A3AAB6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path></svg>
+      <span style="flex: 1; font-size: 15px; font-weight: 600">Shutdown timer</span>
+      <span style="font-size: 13px; color: #8A919E">{{timerHint}}</span>
+    </div>
+    <div role="radiogroup" aria-label="Shutdown timer" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px">
+      <sc-for list="{{timers}}" as="o" hint-placeholder-count="5">
+        <button type="button" role="radio" aria-checked="{{o.checked}}" style="{{o.style}}">{{o.label}}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="flex: 1"></div>
+
+  <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E; margin-bottom: -10px">Hold to confirm</span>
+  <button type="button" aria-label="Shut down. Press and hold to confirm." style="position: relative; overflow: hidden; height: 96px; border-radius: 20px; border: 1px solid rgba(255,107,94,0.45); background: rgba(255,107,94,0.10); color: #FF8A80; font: inherit; cursor: pointer; padding: 0 18px; display: flex; align-items: center; gap: 14px; text-align: left">
+    <span style="{{holdFill}}"></span>
+    <span style="position: relative; width: 48px; height: 48px; flex: none; border-radius: 14px; background: rgba(255,107,94,0.16); display: flex; align-items: center; justify-content: center">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"></path><path d="M6.4 6.6a8 8 0 1 0 11.2 0"></path></svg>
+    </span>
+    <span style="position: relative; flex: 1; display: flex; flex-direction: column; gap: 3px">
+      <span style="font-size: 18px; font-weight: 600; color: #FFB3AC">{{shutLabel}}</span>
+      <span style="font-size: 13px; color: #FF9E95">{{shutSub}}</span>
+    </span>
+  </button>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: -10px">
+    <button type="button" aria-label="Restart. Press and hold to confirm." style="height: 88px; border-radius: 20px; border: 1px solid #3A2E2C; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; padding: 0 14px; display: flex; align-items: center; gap: 12px; text-align: left">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9E95" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Restart</span><span style="font-size: 12px; color: #8A919E">Hold</span></span>
+    </button>
+    <button type="button" aria-label="Log off. Press and hold to confirm." style="height: 88px; border-radius: 20px; border: 1px solid #3A2E2C; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; padding: 0 14px; display: flex; align-items: center; gap: 12px; text-align: left">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9E95" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 16l-4-4 4-4M6 12h10"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Log off</span><span style="font-size: 12px; color: #8A919E">Hold</span></span>
+    </button>
+  </div>
+
+  <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E; margin-bottom: -10px">Instant</span>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <button type="button" style="height: 120px; border-radius: 22px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start">
+      <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(76,141,255,0.12); color: #8DB6FF; display: flex; align-items: center; justify-content: center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+      </span>
+      <span style="font-size: 17px; font-weight: 600">Lock</span>
+    </button>
+    <button type="button" style="height: 120px; border-radius: 22px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start">
+      <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(76,141,255,0.12); color: #8DB6FF; display: flex; align-items: center; justify-content: center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+      </span>
+      <span style="font-size: 17px; font-weight: 600">Sleep</span>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"hold":{"editor":"boolean","default":false},"timer":{"editor":"enum","options":["Off","15m","30m","1h","Custom"],"default":"Off"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const hold = !!this.props.hold;
+    const timer = this.props.timer ?? 'Off';
+    const base = 'height:44px;border-radius:12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;';
+    const timers = ['Off', '15m', '30m', '1h', 'Custom'].map((label) => {
+      const on = label === timer;
+      return { label, checked: on ? 'true' : 'false', style: base + (on ? 'border:1px solid #4C8DFF;background:rgba(76,141,255,0.16);color:#B5CEFF' : 'border:1px solid #262A31;background:#1A1D22;color:#C9CED6') };
+    });
+    return {
+      timers,
+      timerHint: timer === 'Off' ? 'Not set' : 'Shuts down in ' + (timer === 'Custom' ? '…' : timer),
+      holdFill: 'position:absolute;left:0;top:0;bottom:0;width:' + (hold ? '64%' : '0') + ';background:rgba(255,107,94,0.28)',
+      shutLabel: hold ? 'Keep holding…' : 'Shut down',
+      shutSub: hold ? 'Release to cancel' : 'Press and hold for 1.5 s'
+    };
+  }
+}
+</script>
+</body>
+</html>

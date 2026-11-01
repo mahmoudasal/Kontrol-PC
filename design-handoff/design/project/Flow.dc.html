@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — user flow</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 1800px; height: 460px; box-sizing: border-box; background: #101215; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; padding: 40px 48px; display: flex; flex-direction: column; gap: 36px">
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">First launch</span>
+    <div style="display: flex; align-items: stretch">
+      <sc-for list="{{first}}" as="s" hint-placeholder-count="6">
+        <div style="display: flex; align-items: center">
+          <sc-if value="{{s.arrow}}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #4C8DFF">
+              <span style="font-size: 11px; font-weight: 600; color: #8DB6FF">{{s.via}}</span>
+              <svg width="48" height="12" viewBox="0 0 48 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h42M38 1l6 5-6 5"></path></svg>
+            </div>
+          </sc-if>
+          <a href="{{s.href}}" style="width: 222px; height: 104px; box-sizing: border-box; padding: 16px; border-radius: 18px; background: #15171B; border: 1px solid #262A31; display: flex; flex-direction: column; gap: 6px; color: #F2F4F7; text-decoration: none">
+            <span style="font-size: 12px; font-weight: 600; color: #8A919E">{{s.n}}</span>
+            <span style="font-size: 16px; font-weight: 600">{{s.title}}</span>
+            <span style="font-size: 13px; line-height: 1.35; color: #A3AAB6">{{s.sub}}</span>
+          </a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Every launch after · goal ≤ 3 taps, actual 1</span>
+    <div style="display: flex; align-items: center">
+      <sc-for list="{{again}}" as="s" hint-placeholder-count="4">
+        <div style="display: flex; align-items: center">
+          <sc-if value="{{s.arrow}}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #3DDC97">
+              <span style="font-size: 11px; font-weight: 600; color: #5BE3A8">{{s.via}}</span>
+              <svg width="48" height="12" viewBox="0 0 48 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h42M38 1l6 5-6 5"></path></svg>
+            </div>
+          </sc-if>
+          <a href="{{s.href}}" style="width: 222px; height: 104px; box-sizing: border-box; padding: 16px; border-radius: 18px; background: #15171B; border: 1px solid #262A31; display: flex; flex-direction: column; gap: 6px; color: #F2F4F7; text-decoration: none">
+            <span style="font-size: 12px; font-weight: 600; color: #8A919E">{{s.n}}</span>
+            <span style="font-size: 16px; font-weight: 600">{{s.title}}</span>
+            <span style="font-size: 13px; line-height: 1.35; color: #A3AAB6">{{s.sub}}</span>
+          </a>
+        </div>
+      </sc-for>
+      <div style="margin-left: 40px; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border-radius: 18px; border: 1.5px dashed #2E333B; max-width: 340px">
+        <span style="font-size: 14px; font-weight: 600">If the PC doesn't answer</span>
+        <span style="font-size: 13px; line-height: 1.45; color: #A3AAB6">Home opens anyway with a Reconnecting chip and banner; the device switcher stays one tap away.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1800,"height":460}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const first = [
+      { n: '1 · Onboarding', title: 'What Kontrol does', sub: '3 slides, Skip anytime', href: 'Onboarding.dc.html', via: '' },
+      { n: '1c · Permission', title: 'Find my PC', sub: 'Local network access', href: 'Onboarding-Connect.dc.html', via: 'tap' },
+      { n: '2 · Discover', title: 'PCs on this Wi-Fi', sub: 'Auto-scan; empty state if none', href: 'Devices.dc.html', via: 'allow' },
+      { n: '3 · Pair', title: 'QR or 6-digit PIN', sub: 'PC shows Allow / Deny', href: 'Pair.dc.html', via: 'tap PC' },
+      { n: '4 · Home', title: 'Remotes grid', sub: 'Saved as trusted PC', href: 'Main.dc.html', via: 'paired' },
+      { n: '5 · Touchpad', title: 'Control the PC', sub: 'Pinned tile, top of Home', href: 'Touchpad.dc.html', via: 'tap' }
+    ].map((s, i) => ({ ...s, arrow: i > 0 }));
+    const again = [
+      { n: 'Launch', title: 'Open Kontrol', sub: 'Last PC remembered', href: 'Main.dc.html', via: '' },
+      { n: 'Auto', title: 'Reconnect', sub: 'Silent, on the same Wi-Fi', href: 'Main.dc.html', via: '0 taps' },
+      { n: '4 · Home', title: 'Remotes grid', sub: 'Status chip: Connected', href: 'Main.dc.html', via: 'auto' },
+      { n: '5 · Touchpad', title: 'Control the PC', sub: 'Ready to move', href: 'Touchpad.dc.html', via: '1 tap' }
+    ].map((s, i) => ({ ...s, arrow: i > 0 }));
+    return { first, again };
+  }
+}
+</script>
+</body>
+</html>

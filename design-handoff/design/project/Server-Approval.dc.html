@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol Server — connection request</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div role="alertdialog" aria-labelledby="req-title" aria-describedby="req-desc" style="width: 480px; height: 320px; box-sizing: border-box; background: #15171B; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; border: 1px solid #2A2E36; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+  <div style="display: flex; gap: 16px; align-items: flex-start">
+    <span style="width: 52px; height: 52px; flex: none; border-radius: 16px; background: rgba(76,141,255,0.14); color: #8DB6FF; display: flex; align-items: center; justify-content: center">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"></rect><path d="M11 18h2"></path></svg>
+    </span>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h1 id="req-title" style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Pixel 8 wants to connect</h1>
+      <p id="req-desc" style="margin: 0; font-size: 14px; line-height: 1.5; color: #A3AAB6">It will be able to move the mouse, type and use power controls on this PC.</p>
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: #8A919E">Android · 192.168.1.57 · first time</span>
+    </div>
+  </div>
+
+  <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 10px; background: #1A1D22; font-size: 14px; cursor: pointer">
+    <input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 0; accent-color: #4C8DFF">
+    Trust this phone next time
+  </label>
+
+  <div style="flex: 1"></div>
+
+  <div style="display: flex; align-items: center; gap: 10px">
+    <span role="timer" style="flex: 1; font-size: 12px; color: #8A919E">Denies itself in 25 s</span>
+    <button type="button" style="height: 44px; padding: 0 20px; border-radius: 12px; border: 1px solid #2E333B; background: none; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Deny</button>
+    <button type="button" style="height: 44px; padding: 0 24px; border-radius: 12px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Allow</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":480,"height":320}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

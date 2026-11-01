@@ -1,0 +1,284 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Components.dc.html": {
+      "h": 1400,
+      "title": "Component set",
+      "w": 1440,
+      "x": 0,
+      "y": 6088
+    },
+    "Devices-Empty.dc.html": {
+      "h": 844,
+      "title": "2b · Device list — empty",
+      "w": 390,
+      "x": 1880,
+      "y": 880
+    },
+    "Devices.dc.html": {
+      "h": 844,
+      "title": "2a · Device list",
+      "w": 390,
+      "x": 1410,
+      "y": 880
+    },
+    "Flow.dc.html": {
+      "h": 460,
+      "title": "User flow",
+      "w": 1800,
+      "x": 0,
+      "y": 0
+    },
+    "Home-Light.dc.html": {
+      "h": 844,
+      "title": "4b · Home — light",
+      "w": 390,
+      "x": 470,
+      "y": 2144
+    },
+    "Icons.dc.html": {
+      "h": 600,
+      "title": "App icon concepts",
+      "w": 1200,
+      "x": 2840,
+      "y": 6088
+    },
+    "Keyboard.dc.html": {
+      "h": 844,
+      "title": "6 · Keyboard",
+      "w": 390,
+      "x": 0,
+      "y": 3408
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "title": "4a · Home — dark",
+      "w": 390,
+      "x": 0,
+      "y": 2144
+    },
+    "Media.dc.html": {
+      "h": 844,
+      "title": "7 · Media",
+      "w": 390,
+      "x": 470,
+      "y": 3408
+    },
+    "Onboarding-Connect.dc.html": {
+      "h": 844,
+      "title": "1c · Onboarding — Connect + permission",
+      "w": 390,
+      "x": 940,
+      "y": 880
+    },
+    "Onboarding-Install.dc.html": {
+      "h": 844,
+      "title": "1b · Onboarding — Install server",
+      "w": 390,
+      "x": 470,
+      "y": 880
+    },
+    "Onboarding.dc.html": {
+      "h": 844,
+      "title": "1a · Onboarding — What it does",
+      "w": 390,
+      "x": 0,
+      "y": 880
+    },
+    "Pair-PIN.dc.html": {
+      "h": 844,
+      "title": "3b · Pairing — PIN (wrong PIN)",
+      "w": 390,
+      "x": 2820,
+      "y": 880
+    },
+    "Pair.dc.html": {
+      "h": 844,
+      "title": "3a · Pairing — QR",
+      "w": 390,
+      "x": 2350,
+      "y": 880
+    },
+    "Power-Hold.dc.html": {
+      "h": 844,
+      "title": "8b · Power — hold to confirm",
+      "w": 390,
+      "x": 1410,
+      "y": 3408
+    },
+    "Power.dc.html": {
+      "h": 844,
+      "title": "8a · Power",
+      "w": 390,
+      "x": 940,
+      "y": 3408
+    },
+    "Presentation.dc.html": {
+      "h": 844,
+      "title": "9 · Presentation (v2)",
+      "w": 390,
+      "x": 1880,
+      "y": 3408
+    },
+    "Server-Approval.dc.html": {
+      "h": 320,
+      "title": "Server — incoming request",
+      "w": 480,
+      "x": 1340,
+      "y": 5068
+    },
+    "Server-Main.dc.html": {
+      "h": 560,
+      "title": "Server — main window",
+      "w": 820,
+      "x": 0,
+      "y": 5068
+    },
+    "Server-Tray.dc.html": {
+      "h": 440,
+      "title": "Server — tray menu",
+      "w": 360,
+      "x": 900,
+      "y": 5068
+    },
+    "Settings.dc.html": {
+      "h": 1240,
+      "title": "10 · Settings (full scroll)",
+      "w": 390,
+      "x": 2350,
+      "y": 3408
+    },
+    "States.dc.html": {
+      "h": 980,
+      "title": "Global states",
+      "w": 1240,
+      "x": 1520,
+      "y": 6088
+    },
+    "Touchpad-Landscape.dc.html": {
+      "h": 390,
+      "title": "5d · Touchpad — landscape",
+      "w": 844,
+      "x": 2350,
+      "y": 2144
+    },
+    "Touchpad-Light.dc.html": {
+      "h": 844,
+      "title": "5b · Touchpad — light",
+      "w": 390,
+      "x": 1410,
+      "y": 2144
+    },
+    "Touchpad-Sheet.dc.html": {
+      "h": 844,
+      "title": "5c · Touchpad — keyboard sheet",
+      "w": 390,
+      "x": 1880,
+      "y": 2144
+    },
+    "Touchpad.dc.html": {
+      "h": 844,
+      "title": "5a · Touchpad — dark",
+      "w": 390,
+      "x": 940,
+      "y": 2144
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-21T13:15:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "t-flow",
+    "t-setup",
+    "t-core",
+    "t-remotes",
+    "t-server",
+    "t-system"
+  ],
+  "notes": {
+    "t-core": {
+      "kind": "title1",
+      "maxW": 3194,
+      "text": "Core — Home and Touchpad",
+      "w": 240,
+      "x": 0,
+      "y": 1844
+    },
+    "t-flow": {
+      "kind": "title1",
+      "maxW": 1800,
+      "text": "User flow — first launch to Touchpad",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t-remotes": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "Remotes and settings",
+      "w": 240,
+      "x": 0,
+      "y": 3108
+    },
+    "t-server": {
+      "kind": "title1",
+      "maxW": 1820,
+      "text": "Desktop server — Windows",
+      "w": 240,
+      "x": 0,
+      "y": 4768
+    },
+    "t-setup": {
+      "kind": "title1",
+      "maxW": 3210,
+      "text": "Setup — onboard, discover, pair",
+      "w": 240,
+      "x": 0,
+      "y": 580
+    },
+    "t-system": {
+      "kind": "title1",
+      "maxW": 4040,
+      "text": "System — components, states, icon",
+      "w": 240,
+      "x": 0,
+      "y": 5788
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Flow.dc.html",
+    "Onboarding.dc.html",
+    "Onboarding-Install.dc.html",
+    "Onboarding-Connect.dc.html",
+    "Devices.dc.html",
+    "Devices-Empty.dc.html",
+    "Pair.dc.html",
+    "Pair-PIN.dc.html",
+    "Home-Light.dc.html",
+    "Touchpad.dc.html",
+    "Touchpad-Light.dc.html",
+    "Touchpad-Sheet.dc.html",
+    "Touchpad-Landscape.dc.html",
+    "Keyboard.dc.html",
+    "Media.dc.html",
+    "Power.dc.html",
+    "Power-Hold.dc.html",
+    "Presentation.dc.html",
+    "Settings.dc.html",
+    "Server-Main.dc.html",
+    "Server-Tray.dc.html",
+    "Server-Approval.dc.html",
+    "Components.dc.html",
+    "States.dc.html",
+    "Icons.dc.html"
+  ],
+  "pages": [],
+  "title": "Kontrol — PC Control Kit"
+}

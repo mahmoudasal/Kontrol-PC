@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — global states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 1240px; height: 980px; box-sizing: border-box; background: #101215; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; padding: 44px 48px; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; align-items: baseline; gap: 16px">
+    <h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Global states</h1>
+    <span style="font-size: 14px; color: #A3AAB6">Every state says what happened and offers one way forward.</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px">
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Reconnecting banner</span>
+      <div style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 18px 16px; display: flex; flex-direction: column; gap: 14px; overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span style="width: 40px; height: 40px; border-radius: 12px; background: #15171B; border: 1px solid #262A31"></span>
+          <span style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 15px; font-weight: 600">Living-Room PC</span>
+            <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 22px; padding: 0 9px 0 7px; border-radius: 999px; background: rgba(245,181,68,0.14); color: #F7C66B; font-size: 11px; font-weight: 600"><span style="width: 8px; height: 8px; box-sizing: border-box; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent"></span>Reconnecting</span>
+          </span>
+        </div>
+        <div role="status" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(245,181,68,0.14); color: #F7C66B; font-size: 14px; font-weight: 500">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.2-8.6"></path></svg>
+          <span>Reconnecting… attempt 2 of 5</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; opacity: 0.45">
+          <span style="height: 96px; border-radius: 18px; background: #15171B; border: 1px solid #262A31"></span>
+          <span style="height: 96px; border-radius: 18px; background: #15171B; border: 1px solid #262A31"></span>
+          <span style="height: 96px; border-radius: 18px; background: #15171B; border: 1px solid #262A31"></span>
+          <span style="height: 96px; border-radius: 18px; background: #15171B; border: 1px solid #262A31"></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Connection lost</span>
+      <div style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px">
+        <span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 20px; background: #15171B; border: 1px solid #262A31; color: #A3AAB6; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7 7 5a3.5 3.5 0 0 0-5 5l2 2M15 17l2 2a3.5 3.5 0 0 0 5-5l-2-2M8 16l2-2M14 10l2-2"></path></svg>
+        </span>
+        <h2 style="margin: 6px 0 0; font-size: 18px; font-weight: 700">Lost connection</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A3AAB6; max-width: 260px">Living-Room PC stopped answering. It may be asleep or off Wi-Fi.</p>
+        <div style="display: flex; flex-direction: column; gap: 6px; align-self: stretch; margin-top: 10px">
+          <button type="button" style="height: 48px; border-radius: 14px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Retry</button>
+          <button type="button" style="height: 44px; border-radius: 14px; border: 0; background: none; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Choose another PC</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Server not found (manual IP)</span>
+      <div style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 24px 20px; display: flex; flex-direction: column; gap: 12px">
+        <label for="st-ip" style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">PC address</label>
+        <input id="st-ip" value="192.168.1.24" aria-invalid="true" aria-describedby="st-ip-err" style="height: 52px; box-sizing: border-box; border-radius: 14px; border: 1.5px solid #FF6B5E; background: #15171B; color: #F2F4F7; padding: 0 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 16px; outline: none">
+        <div id="st-ip-err" role="alert" style="display: flex; gap: 10px; color: #FF8A80; font-size: 14px; line-height: 1.45">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M12 4 2.5 20h19z"></path><path d="M12 10v4M12 17h.01"></path></svg>
+          <span>No Kontrol Server at this address. Check it's running, and that the firewall allows port 7531.</span>
+        </div>
+        <div style="flex: 1"></div>
+        <button type="button" style="height: 48px; border-radius: 14px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Try again</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Wi-Fi off</span>
+      <div style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px">
+        <span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 20px; background: #15171B; border: 1px solid #262A31; color: #A3AAB6; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"></path><path d="M12 19h.01M3 3l18 18"></path></svg>
+        </span>
+        <h2 style="margin: 6px 0 0; font-size: 18px; font-weight: 700">Wi-Fi is off</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A3AAB6; max-width: 260px">Kontrol needs the same Wi-Fi as your PC. Mobile data won't work.</p>
+        <button type="button" style="align-self: stretch; margin-top: 10px; height: 48px; border-radius: 14px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Open Wi-Fi settings</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Camera permission denied</span>
+      <div style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px">
+        <span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 20px; background: #15171B; border: 1px solid #262A31; color: #A3AAB6; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle><path d="M3 3l18 18"></path></svg>
+        </span>
+        <h2 style="margin: 6px 0 0; font-size: 18px; font-weight: 700">Camera access is off</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A3AAB6; max-width: 260px">Allow it to scan the QR code, or pair with the 6-digit PIN.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-self: stretch; margin-top: 10px">
+          <button type="button" style="height: 48px; border-radius: 14px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Use PIN</button>
+          <button type="button" style="height: 48px; border-radius: 14px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Allow camera</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; font-weight: 600; color: #A3AAB6">Loading skeleton (device scan)</span>
+      <div aria-busy="true" aria-label="Looking for PCs" style="height: 340px; box-sizing: border-box; border-radius: 24px; background: #0B0C0E; border: 1px solid #23272E; padding: 24px 20px; display: flex; flex-direction: column; gap: 14px">
+        <span style="width: 150px; height: 22px; border-radius: 6px; background: #1A1D22"></span>
+        <span style="width: 100px; height: 12px; border-radius: 6px; background: #1A1D22"></span>
+        <div style="display: flex; flex-direction: column; gap: 0; border-radius: 18px; background: #15171B; border: 1px solid #262A31; padding: 4px 14px; margin-top: 8px">
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="3">
+            <div style="display: flex; align-items: center; gap: 12px; height: 64px">
+              <span style="width: 40px; height: 40px; border-radius: 12px; background: #1E2127"></span>
+              <span style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+                <span style="{{r.w1}}"></span>
+                <span style="{{r.w2}}"></span>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1240,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const bar = (w, h) => 'width:' + w + ';height:' + h + 'px;border-radius:6px;background:#23272E';
+    return {
+      rows: [
+        { w1: bar('62%', 12), w2: bar('40%', 10) },
+        { w1: bar('48%', 12), w2: bar('34%', 10) },
+        { w1: bar('56%', 12), w2: bar('44%', 10) }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
