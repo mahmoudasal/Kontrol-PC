@@ -60,4 +60,49 @@ abstract final class KontrolTypography {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+
+  /// Large monospace figures (pairing PIN). Tabular so digits never shift.
+  static const TextStyle monoDisplay = TextStyle(
+    fontFamily: _mono,
+    package: _package,
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1.2,
+    fontFeatures: [FontFeature.tabularFigures()],
+  );
+
+  /// Pane / dialog title (desktop).
+  static const TextStyle title = TextStyle(
+    fontFamily: _inter,
+    package: _package,
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    letterSpacing: -0.18,
+  );
+
+  /// Dense body copy (13px).
+  static const TextStyle callout = TextStyle(
+    fontFamily: _inter,
+    package: _package,
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+  );
+
+  static const TextStyle caption = TextStyle(
+    fontFamily: _inter,
+    package: _package,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+
+  /// Uppercase section label: 12/600, letter-spacing 0.06em. Callers
+  /// uppercase the text.
+  static const TextStyle sectionLabel = TextStyle(
+    fontFamily: _inter,
+    package: _package,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.72,
+  );
 }
