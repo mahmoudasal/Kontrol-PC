@@ -5,8 +5,31 @@
 #include "flutter_window.h"
 #include "utils.h"
 
+namespace {
+
+constexpr const wchar_t kWindowTitle[] = L"Kontrol Server";
+constexpr const wchar_t kInstanceMutex[] = L"Local\\com.asal.kontrol.server";
+
+// Brings the already-running server window to the front.
+void FocusExistingInstance() {
+  HWND existing = ::FindWindowW(L"FLUTTER_RUNNER_WIN32_WINDOW", kWindowTitle);
+  if (existing == nullptr) return;
+  ::ShowWindow(existing, ::IsIconic(existing) ? SW_RESTORE : SW_SHOW);
+  ::SetForegroundWindow(existing);
+}
+
+}  // namespace
+
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
                       _In_ wchar_t *command_line, _In_ int show_command) {
+  // One server per user session: a second launch focuses the first window.
+  HANDLE instance_mutex = ::CreateMutexW(nullptr, TRUE, kInstanceMutex);
+  if (instance_mutex != nullptr && ::GetLastError() == ERROR_ALREADY_EXISTS) {
+    FocusExistingInstance();
+    ::CloseHandle(instance_mutex);
+    return EXIT_SUCCESS;
+  }
+
   // Attach to console when present (e.g., 'flutter run') or create a
   // new console when running with a debugger.
   if (!::AttachConsole(ATTACH_PARENT_PROCESS) && ::IsDebuggerPresent()) {
@@ -26,8 +49,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
-  Win32Window::Size size(1280, 720);
-  if (!window.Create(L"kontrol_desktop", origin, size)) {
+  // Final 820x560 client size and centering are applied from Dart.
+  Win32Window::Size size(820, 560);
+  if (!window.Create(kWindowTitle, origin, size)) {
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);
@@ -39,5 +63,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   }
 
   ::CoUninitialize();
+  if (instance_mutex != nullptr) ::CloseHandle(instance_mutex);
   return EXIT_SUCCESS;
 }

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.asal" "\0"
-            VALUE "FileDescription", "kontrol_desktop" "\0"
+            VALUE "FileDescription", "Kontrol Server" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "kontrol_desktop" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.asal. All rights reserved." "\0"
             VALUE "OriginalFilename", "kontrol_desktop.exe" "\0"
-            VALUE "ProductName", "kontrol_desktop" "\0"
+            VALUE "ProductName", "Kontrol Server" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
