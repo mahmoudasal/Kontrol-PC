@@ -2,15 +2,7 @@ import 'package:kontrol_protocol/kontrol_protocol.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    final awesome = Awesome();
-
-    setUp(() {
-      // Additional setup goes here.
-    });
-
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
-    });
+  test('default port is 7531', () {
+    expect(kDefaultPort, 7531);
   });
 }
