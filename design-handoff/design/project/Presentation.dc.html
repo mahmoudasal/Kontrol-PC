@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — Presentation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0C0E; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; gap: 14px; padding: 52px 16px 28px; overflow: hidden">
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <a href="Main.dc.html" aria-label="Back to remotes" style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #F2F4F7; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>
+    </a>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+      <span style="font-size: 17px; font-weight: 600">Presentation</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #5BE3A8"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97"></span>Connected · Living-Room PC</span>
+    </div>
+    <span role="timer" aria-label="Elapsed 12 minutes 4 seconds" style="height: 36px; padding: 0 12px; border-radius: 10px; background: #15171B; border: 1px solid #262A31; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center">12:04</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+    <button type="button" style="height: 76px; border-radius: 18px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>
+      <span style="font-size: 13px; font-weight: 600">End show</span>
+    </button>
+    <button type="button" aria-pressed="false" style="height: 76px; border-radius: 18px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="12" rx="2" fill="currentColor"></rect><path d="M9 20h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+      <span style="font-size: 13px; font-weight: 600">Black screen</span>
+    </button>
+    <button type="button" aria-label="Laser pointer. Hold and tilt the phone to aim." style="height: 76px; border-radius: 18px; border: 1px solid rgba(76,141,255,0.5); background: rgba(76,141,255,0.10); color: #B5CEFF; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path></svg>
+      <span style="font-size: 13px; font-weight: 600">Hold: laser</span>
+    </button>
+  </div>
+
+  <button type="button" style="height: 150px; border-radius: 26px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 6px">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"></path></svg>
+    <span style="font-size: 20px; font-weight: 600">Previous</span>
+  </button>
+
+  <button type="button" style="flex: 1; border-radius: 30px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px">
+    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+    <span style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Next</span>
+  </button>
+
+  <div style="display: flex; align-items: center; gap: 12px; min-height: 52px">
+    <span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+      <span style="font-size: 15px; font-weight: 600">Volume keys change slides</span>
+      <span style="font-size: 13px; color: #8A919E">Up = next, down = previous</span>
+    </span>
+    <button type="button" aria-pressed="true" aria-label="Volume keys change slides" style="width: 52px; height: 32px; flex: none; border-radius: 999px; border: 0; background: #4C8DFF; padding: 3px; display: flex; justify-content: flex-end; cursor: pointer">
+      <span style="width: 26px; height: 26px; border-radius: 50%; background: #05101F"></span>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

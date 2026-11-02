@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol Server — main window</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 820px; height: 560px; box-sizing: border-box; background: #0B0C0E; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; border: 1px solid #2A2E36; border-radius: 10px; overflow: hidden">
+
+  <div style="height: 40px; flex: none; display: flex; align-items: center; gap: 10px; padding-left: 14px; background: #101215; border-bottom: 1px solid #1E2127">
+    <svg width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#4C8DFF"></rect><rect x="9" y="7" width="3.6" height="18" rx="1.8" fill="#05101F"></rect><path d="M14 16.2 23.5 7.5 21.6 17.6Z" fill="#05101F"></path><path d="M16.5 17.5 23 25" stroke="#05101F" stroke-width="3.6" stroke-linecap="round"></path></svg>
+    <span style="flex: 1; font-size: 13px; font-weight: 600">Kontrol Server</span>
+    <button type="button" aria-label="Minimize to tray" style="width: 46px; height: 40px; border: 0; background: none; color: #A3AAB6; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+    <button type="button" aria-label="Close to tray" style="width: 46px; height: 40px; border: 0; background: none; color: #A3AAB6; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+  </div>
+
+  <div style="flex: 1; display: flex; min-height: 0">
+    <div style="width: 330px; flex: none; box-sizing: border-box; padding: 22px 24px; border-right: 1px solid #1E2127; display: flex; flex-direction: column; gap: 16px; background: #0E1013">
+      <span role="status" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px; background: rgba(61,220,151,0.12); color: #5BE3A8; font-size: 12px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97"></span>Ready to pair</span>
+      <div style="display: flex; gap: 16px; align-items: center">
+        <div role="img" aria-label="Pairing QR code" style="width: 136px; height: 136px; flex: none; box-sizing: border-box; padding: 9px; border-radius: 14px; background: #FFFFFF">
+          <div style="display: grid; grid-template-columns: repeat(25, minmax(0, 1fr)); grid-template-rows: repeat(25, minmax(0, 1fr)); width: 118px; height: 118px">
+            <sc-for list="{{cells}}" as="c" hint-placeholder-count="625">
+              <span style="{{c}}"></span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Or enter PIN</span>
+          <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 30px; font-weight: 600; letter-spacing: 0.04em">482 916</span>
+          <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; color: #8A919E">New code in 4:32
+            <button type="button" aria-label="New code now" style="width: 28px; height: 28px; border: 0; border-radius: 8px; background: none; color: #8DB6FF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3.5M4 4v4h4"></path><path d="M4 13a8 8 0 0 0 14.9 3.5M20 20v-4h-4"></path></svg></button>
+          </span>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #A3AAB6">Open Kontrol on your phone and tap <strong style="color: #F2F4F7; font-weight: 600">Find my PC</strong>, or scan this code.</p>
+      <div style="flex: 1"></div>
+      <dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; font-size: 13px; padding: 14px; border-radius: 12px; background: #15171B; border: 1px solid #23272E">
+        <dt style="color: #8A919E">PC name</dt><dd style="margin: 0; font-weight: 600">LIVING-ROOM-PC</dd>
+        <dt style="color: #8A919E">Address</dt><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px">192.168.1.24:7531</dd>
+        <dt style="color: #8A919E">Network</dt><dd style="margin: 0">Home-5G</dd>
+      </dl>
+    </div>
+
+    <div style="flex: 1; min-width: 0; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+        <h1 style="margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em">Paired devices</h1>
+        <button type="button" aria-pressed="false" style="height: 34px; padding: 0 12px; border-radius: 10px; border: 1px solid #2E333B; background: #15171B; color: #F2F4F7; font: inherit; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9 5v14M15 5v14"></path></svg>Pause control
+        </button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; border-radius: 14px; border: 1px solid #23272E; overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #15171B">
+          <span style="width: 36px; height: 36px; flex: none; border-radius: 10px; background: #1E2127; display: flex; align-items: center; justify-content: center; color: #F2F4F7"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"></rect><path d="M11 18h2"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 14px; font-weight: 600">Pixel 8</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #5BE3A8"><span style="width: 7px; height: 7px; border-radius: 50%; background: #3DDC97"></span>Connected now · Android</span>
+          </span>
+          <button type="button" style="height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid #2E333B; background: none; color: #F2F4F7; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer">Disconnect</button>
+        </div>
+        <div style="height: 1px; background: #23272E"></div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #121418">
+          <span style="width: 36px; height: 36px; flex: none; border-radius: 10px; background: #1E2127; display: flex; align-items: center; justify-content: center; color: #A3AAB6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"></rect><path d="M11 18h2"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 14px; font-weight: 600">iPhone 15</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #A3AAB6"><span style="width: 7px; height: 7px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid currentColor"></span>Last seen 3 days ago · iOS</span>
+          </span>
+          <button type="button" style="height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,107,94,0.4); background: none; color: #FF8A80; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer">Revoke</button>
+        </div>
+      </div>
+
+      <div style="flex: 1"></div>
+
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #15171B; border: 1px solid #23272E">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8DB6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <span style="flex: 1; font-size: 13px; color: #C9CED6">New devices need your approval</span>
+        <button type="button" aria-pressed="true" aria-label="Require approval for new devices" style="width: 40px; height: 24px; flex: none; border-radius: 999px; border: 0; background: #4C8DFF; padding: 2px; display: flex; justify-content: flex-end; cursor: pointer"><span style="width: 20px; height: 20px; border-radius: 50%; background: #05101F"></span></button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #8A919E">
+        <span>Starts with Windows · v[x.y.z]</span>
+        <a href="#settings" style="color: #8DB6FF; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; min-height: 32px">Settings</a>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":820,"height":560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const N = 25;
+    const cells = [];
+    const finder = (r, c) => {
+      const origins = [[0, 0], [0, N - 7], [N - 7, 0]];
+      for (const [r0, c0] of origins) {
+        if (r >= r0 - 1 && r <= r0 + 7 && c >= c0 - 1 && c <= c0 + 7) {
+          const rr = r - r0, cc = c - c0;
+          if (rr < 0 || rr > 6 || cc < 0 || cc > 6) return 0;
+          if (rr === 0 || rr === 6 || cc === 0 || cc === 6) return 1;
+          if (rr >= 2 && rr <= 4 && cc >= 2 && cc <= 4) return 1;
+          return 0;
+        }
+      }
+      return null;
+    };
+    for (let r = 0; r < N; r++) {
+      for (let c = 0; c < N; c++) {
+        let on = finder(r, c);
+        if (on === null) {
+          if (r === 6) on = c % 2 === 0 ? 1 : 0;
+          else if (c === 6) on = r % 2 === 0 ? 1 : 0;
+          else on = ((r * 37 + c * 19 + r * c * 11 + 7) % 13) < 6 ? 1 : 0;
+        }
+        cells.push(on ? 'background:#0B0C0E' : 'background:transparent');
+      }
+    }
+    return { cells };
+  }
+}
+</script>
+</body>
+</html>

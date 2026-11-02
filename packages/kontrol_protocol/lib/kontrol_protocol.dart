@@ -1,8 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Shared message models and constants for the Kontrol phone and PC apps.
 library;
 
-export 'src/kontrol_protocol_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/constants.dart';

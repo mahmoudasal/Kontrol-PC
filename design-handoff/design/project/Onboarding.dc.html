@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — Onboarding</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0C0E; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; display: flex; flex-direction: column; padding: 56px 24px 32px; overflow: hidden">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 48px">
+    <span style="display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#4C8DFF"></rect><rect x="9" y="7" width="3.6" height="18" rx="1.8" fill="#05101F"></rect><path d="M14 16.2 23.5 7.5 21.6 17.6Z" fill="#05101F"></path><path d="M16.5 17.5 23 25" stroke="#05101F" stroke-width="3.6" stroke-linecap="round"></path></svg>Kontrol
+    </span>
+    <sc-if value="{{showSkip}}" hint-placeholder-val="{{ true }}">
+      <a href="Devices.dc.html" style="height: 48px; padding: 0 14px; display: flex; align-items: center; color: #A3AAB6; font-size: 15px; font-weight: 600; text-decoration: none">Skip</a>
+    </sc-if>
+  </div>
+
+  <div style="height: 330px; display: flex; align-items: center; justify-content: center; margin-top: 12px">
+    <sc-if value="{{s1}}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 22px">
+        <div style="width: 84px; height: 156px; box-sizing: border-box; border-radius: 20px; border: 2px solid #3A404A; background: #15171B; padding: 10px 8px; display: flex; flex-direction: column; gap: 6px">
+          <div style="flex: 1; border-radius: 10px; background: #1E2127; position: relative">
+            <div style="position: absolute; left: 22px; top: 40px; width: 22px; height: 22px; border-radius: 50%; background: rgba(76,141,255,0.45)"></div>
+          </div>
+          <div style="display: flex; gap: 4px"><div style="flex: 1; height: 14px; border-radius: 5px; background: #262A31"></div><div style="flex: 1; height: 14px; border-radius: 5px; background: #262A31"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding-bottom: 64px; color: #4C8DFF">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 5"><path d="M2 12h36"></path></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+          <div style="width: 168px; height: 112px; box-sizing: border-box; border-radius: 12px; border: 2px solid #3A404A; background: #15171B; position: relative">
+            <svg width="22" height="22" viewBox="0 0 24 24" style="position: absolute; left: 70px; top: 38px" fill="#F2F4F7" stroke="#0B0C0E" stroke-width="1.2" stroke-linejoin="round"><path d="M5 3l14 7-6 2-2 6z"></path></svg>
+          </div>
+          <div style="width: 44px; height: 4px; border-radius: 4px; background: #3A404A"></div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+      <div aria-hidden="true" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+        <div style="width: 220px; height: 144px; box-sizing: border-box; border-radius: 14px; border: 2px solid #3A404A; background: #15171B; display: flex; align-items: center; justify-content: center">
+          <div style="width: 72px; height: 72px; border-radius: 20px; background: rgba(76,141,255,0.14); color: #8DB6FF; display: flex; align-items: center; justify-content: center">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+          </div>
+        </div>
+        <div style="width: 56px; height: 4px; border-radius: 4px; background: #3A404A"></div>
+      </div>
+    </sc-if>
+    <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+      <div aria-hidden="true" style="position: relative; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center">
+        <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(76,141,255,0.14)"></div>
+        <div style="position: absolute; inset: 40px; border-radius: 50%; border: 1px solid rgba(76,141,255,0.24)"></div>
+        <div style="position: absolute; inset: 80px; border-radius: 50%; border: 1px solid rgba(76,141,255,0.40)"></div>
+        <div style="width: 64px; height: 64px; border-radius: 20px; background: #4C8DFF; color: #05101F; display: flex; align-items: center; justify-content: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"></path><path d="M12 19h.01"></path></svg>
+        </div>
+        <div style="position: absolute; right: 6px; top: 38px; width: 40px; height: 40px; border-radius: 12px; background: #1E2127; border: 1px solid #2E333B; color: #F2F4F7; display: flex; align-items: center; justify-content: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px">
+    <sc-if value="{{s1}}" hint-placeholder-val="{{ true }}">
+      <h1 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; text-wrap: balance">Your phone is now the remote.</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A3AAB6; text-wrap: pretty">Move the mouse, type, play media and put your PC to sleep — over your home Wi-Fi. No cables, no account.</p>
+    </sc-if>
+    <sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; text-wrap: balance">Install Kontrol Server on your PC.</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A3AAB6">Free and open source. Windows 10 and 11.</p>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 14px; background: #15171B; border: 1px solid #262A31; margin-top: 6px">
+        <span style="flex: 1; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; color: #F2F4F7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">[download URL]</span>
+        <button type="button" aria-label="Copy link" style="width: 44px; height: 44px; border-radius: 10px; border: 0; background: #1E2127; color: #F2F4F7; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg>
+        </button>
+        <button type="button" aria-label="Share link to PC" style="width: 44px; height: 44px; border-radius: 10px; border: 0; background: #1E2127; color: #F2F4F7; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg>
+        </button>
+      </div>
+    </sc-if>
+    <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; text-wrap: balance">Find your PC on this Wi-Fi.</h1>
+      <div style="display: flex; gap: 12px; padding: 14px; border-radius: 16px; background: #15171B; border: 1px solid #262A31; margin-top: 4px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8DB6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <span style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 15px; font-weight: 600">Next, allow local network access</span>
+          <span style="font-size: 14px; line-height: 1.45; color: #A3AAB6">Kontrol only talks to devices on your Wi-Fi. Nothing goes to the internet.</span>
+        </span>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="flex: 1"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px">
+    <div role="img" aria-label="{{stepLabel}}" style="display: flex; gap: 6px; justify-content: center">
+      <span style="{{dot1}}"></span><span style="{{dot2}}"></span><span style="{{dot3}}"></span>
+    </div>
+    <sc-if value="{{notLast}}" hint-placeholder-val="{{ true }}">
+      <a href="{{nextHref}}" style="height: 56px; border-radius: 16px; background: #4C8DFF; color: #05101F; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Next</a>
+    </sc-if>
+    <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <a href="Devices.dc.html" style="height: 56px; border-radius: 16px; background: #4C8DFF; color: #05101F; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Find my PC
+        </a>
+        <a href="Pair.dc.html" style="height: 48px; border-radius: 16px; color: #F2F4F7; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Scan QR code instead</a>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"enum","options":["1","2","3"],"default":"1"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const step = String(this.props.step ?? '1');
+    const on = 'width:24px;height:8px;border-radius:8px;background:#4C8DFF';
+    const off = 'width:8px;height:8px;border-radius:8px;background:#3A404A';
+    return {
+      s1: step === '1', s2: step === '2', s3: step === '3',
+      showSkip: step !== '3', notLast: step !== '3',
+      nextHref: step === '1' ? 'Onboarding-Install.dc.html' : 'Onboarding-Connect.dc.html',
+      stepLabel: 'Step ' + step + ' of 3',
+      dot1: step === '1' ? on : off, dot2: step === '2' ? on : off, dot3: step === '3' ? on : off
+    };
+  }
+}
+</script>
+</body>
+</html>

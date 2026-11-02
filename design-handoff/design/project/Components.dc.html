@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kontrol — component set</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 1440px; min-height: 1400px; box-sizing: border-box; background: #101215; color: #F2F4F7; font-family: 'Inter', system-ui, sans-serif; padding: 44px 48px 56px; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px">
+    <h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Component set</h1>
+    <span style="font-size: 14px; color: #A3AAB6">Maps to Material 3 widgets · 48 dp minimum targets · status never by color alone</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 520px minmax(0, 1fr); gap: 40px; align-items: start">
+
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Color · dark</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+          <sc-for list="{{dark}}" as="s" hint-placeholder-count="12">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <span style="{{s.chip}}"></span>
+              <span style="font-size: 12px; font-weight: 600">{{s.name}}</span>
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">{{s.hex}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Color · light</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+          <sc-for list="{{light}}" as="s" hint-placeholder-count="8">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <span style="{{s.chip}}"></span>
+              <span style="font-size: 12px; font-weight: 600">{{s.name}}</span>
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">{{s.hex}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Type</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 18px; background: #15171B; border: 1px solid #23272E">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 30px; font-weight: 700; letter-spacing: -0.025em">Display</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Inter 30/700</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Title</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Inter 22/600</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 17px; font-weight: 600">Heading</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Inter 17/600</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 15px">Body text for settings and helpers</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Inter 15/400</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A3AAB6">Section label</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Inter 12/600 caps</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 15px; font-weight: 600">192.168.1.24 · 482 916</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">JetBrains Mono 15</span></div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-top: 1px solid #23272E; padding-top: 12px"><span lang="ar" dir="rtl" style="font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 22px; font-weight: 600">تحكّم في جهازك من هاتفك</span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">Plex Arabic 22/600</span></div>
+        </div>
+      </section>
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Radius</h2>
+        <div style="display: flex; gap: 14px; align-items: flex-end">
+          <div style="display: flex; flex-direction: column; gap: 6px; align-items: center"><span style="width: 56px; height: 56px; border-radius: 10px; border: 1.5px solid #4C8DFF"></span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">10 · keys</span></div>
+          <div style="display: flex; flex-direction: column; gap: 6px; align-items: center"><span style="width: 56px; height: 56px; border-radius: 14px; border: 1.5px solid #4C8DFF"></span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">14 · buttons</span></div>
+          <div style="display: flex; flex-direction: column; gap: 6px; align-items: center"><span style="width: 56px; height: 56px; border-radius: 20px; border: 1.5px solid #4C8DFF"></span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">20 · tiles</span></div>
+          <div style="display: flex; flex-direction: column; gap: 6px; align-items: center"><span style="width: 56px; height: 56px; border-radius: 26px; border: 1.5px solid #4C8DFF"></span><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: #A3AAB6">26 · sheets</span></div>
+        </div>
+      </section>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Remote tiles · default / pinned / locked</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+          <a href="#tile" style="height: 120px; box-sizing: border-box; border-radius: 20px; background: #15171B; border: 1px solid #262A31; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; color: #F2F4F7; text-decoration: none">
+            <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(76,141,255,0.12); color: #8DB6FF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5v7l6-3.5z"></path></svg></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Media</span><span style="font-size: 13px; color: #A3AAB6">Play, volume</span></span>
+          </a>
+          <a href="#tile-pinned" style="height: 120px; box-sizing: border-box; border-radius: 20px; background: #4C8DFF; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; color: #05101F; text-decoration: none">
+            <span style="display: flex; justify-content: space-between">
+              <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M3 15h18M12 15v5"></path></svg></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pinned"><path d="M9 4h6l-1 6 3 3H7l3-3zM12 13v7"></path></svg>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Touchpad</span><span style="font-size: 13px; font-weight: 500">Pinned</span></span>
+          </a>
+          <button type="button" disabled="" style="height: 120px; box-sizing: border-box; border-radius: 20px; background: transparent; border: 1.5px dashed #2E333B; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; color: #A3AAB6; font: inherit; cursor: not-allowed; text-align: left">
+            <span style="width: 44px; height: 44px; border-radius: 12px; background: #1E2127; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Custom</span><span style="font-size: 13px">Coming soon</span></span>
+          </button>
+        </div>
+      </section>
+
+      <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Status chip</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px 0 9px; border-radius: 999px; background: rgba(61,220,151,0.12); color: #5BE3A8; font-size: 13px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97"></span>Connected</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px 0 9px; border-radius: 999px; background: rgba(245,181,68,0.14); color: #F7C66B; font-size: 13px; font-weight: 600"><span style="width: 8px; height: 8px; box-sizing: border-box; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent"></span>Reconnecting</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px 0 9px; border-radius: 999px; background: rgba(255,255,255,0.07); color: #A3AAB6; font-size: 13px; font-weight: 600"><span style="width: 8px; height: 8px; box-sizing: border-box; border-radius: 50%; border: 2px solid currentColor"></span>Offline</span>
+          </div>
+          <span style="font-size: 13px; color: #8A919E">Dot shape changes too: filled, spinning arc, hollow ring.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Buttons</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+            <button type="button" style="height: 48px; padding: 0 20px; border-radius: 14px; border: 0; background: #4C8DFF; color: #05101F; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Primary</button>
+            <button type="button" style="height: 48px; padding: 0 20px; border-radius: 14px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Secondary</button>
+            <button type="button" style="height: 48px; padding: 0 16px; border-radius: 14px; border: 0; background: none; color: #8DB6FF; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Text</button>
+            <button type="button" aria-label="Settings" style="width: 48px; height: 48px; border-radius: 14px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></button>
+            <button type="button" style="height: 48px; padding: 0 18px; border-radius: 14px; border: 1px solid rgba(255,107,94,0.45); background: rgba(255,107,94,0.10); color: #FFB3AC; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Hold to shut down</button>
+          </div>
+        </div>
+      </section>
+
+      <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Key buttons</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <button type="button" style="min-width: 52px; height: 46px; padding: 0 12px; border-radius: 12px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Esc</button>
+            <button type="button" style="min-width: 52px; height: 46px; padding: 0 12px; border-radius: 12px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Tab</button>
+            <button type="button" style="min-width: 52px; height: 46px; padding: 0 12px; border-radius: 12px; border: 1px solid #262A31; background: #15171B; color: #C9CED6; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; cursor: pointer">F5</button>
+            <button type="button" aria-label="Up" style="width: 52px; height: 46px; border-radius: 12px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></button>
+            <button type="button" style="min-width: 76px; height: 46px; padding: 0 12px; border-radius: 12px; border: 0; background: #1E2127; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Enter</button>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Modifier toggle · off / held / locked</h2>
+          <div style="display: flex; gap: 8px">
+            <button type="button" aria-pressed="false" style="width: 76px; height: 48px; border-radius: 12px; border: 1px solid #262A31; background: #15171B; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Ctrl</button>
+            <button type="button" aria-pressed="true" style="width: 76px; height: 48px; border-radius: 12px; border: 1px solid #4C8DFF; background: #4C8DFF; color: #05101F; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Ctrl</button>
+            <button type="button" aria-pressed="true" aria-label="Ctrl, locked" style="width: 76px; height: 48px; border-radius: 12px; border: 2px solid #B5CEFF; background: #4C8DFF; color: #05101F; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Ctrl
+            </button>
+          </div>
+          <span style="font-size: 13px; color: #8A919E">Tap = held for next key. Double-tap = locked (lock glyph + outline).</span>
+        </div>
+      </section>
+
+      <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Slider · switch · segmented</h2>
+          <div style="position: relative; height: 40px; display: flex; align-items: center">
+            <div style="position: absolute; left: 0; right: 0; height: 10px; border-radius: 10px; background: #262A31"></div>
+            <div style="position: absolute; left: 0; width: 64%; height: 10px; border-radius: 10px; background: #4C8DFF"></div>
+            <div style="position: absolute; left: calc(64% - 13px); width: 26px; height: 26px; border-radius: 50%; background: #F2F4F7"></div>
+            <label for="cmp-slider" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Sample slider</label>
+            <input id="cmp-slider" type="range" min="0" max="100" value="64" style="position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0">
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center">
+            <button type="button" aria-pressed="true" aria-label="Switch on" style="width: 52px; height: 32px; border-radius: 999px; border: 0; background: #4C8DFF; padding: 3px; display: flex; justify-content: flex-end; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #05101F"></span></button>
+            <button type="button" aria-pressed="false" aria-label="Switch off" style="width: 52px; height: 32px; border-radius: 999px; border: 0; background: #3A404A; padding: 3px; display: flex; justify-content: flex-start; cursor: pointer"><span style="width: 26px; height: 26px; border-radius: 50%; background: #C9CED6"></span></button>
+            <div role="radiogroup" aria-label="Theme" style="flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #0B0C0E; border: 1px solid #23272E">
+              <button type="button" role="radio" aria-checked="true" style="height: 38px; border-radius: 10px; border: 0; background: #262A31; color: #F2F4F7; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Dark</button>
+              <button type="button" role="radio" aria-checked="false" style="height: 38px; border-radius: 10px; border: 0; background: none; color: #A3AAB6; font: inherit; font-size: 13px; cursor: pointer">Light</button>
+              <button type="button" role="radio" aria-checked="false" style="height: 38px; border-radius: 10px; border: 0; background: none; color: #A3AAB6; font: inherit; font-size: 13px; cursor: pointer">System</button>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Snackbar</h2>
+          <div role="status" style="display: flex; align-items: center; gap: 12px; padding: 0 8px 0 16px; height: 52px; border-radius: 14px; background: #F2F4F7; color: #0E1116; font-size: 14px; font-weight: 500">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>
+            <span style="flex: 1">Copied on Living-Room PC</span>
+            <button type="button" style="height: 40px; padding: 0 12px; border-radius: 10px; border: 0; background: none; color: #1F5FD6; font: inherit; font-weight: 600; cursor: pointer">Undo</button>
+          </div>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A919E">Dialog</h2>
+        <div style="display: flex; gap: 20px; align-items: flex-start">
+          <div role="alertdialog" aria-labelledby="dlg-t" style="width: 340px; box-sizing: border-box; padding: 22px; border-radius: 26px; background: #1A1D22; border: 1px solid #2A2E36; display: flex; flex-direction: column; gap: 10px">
+            <h3 id="dlg-t" style="margin: 0; font-size: 19px; font-weight: 700">Restart Living-Room PC?</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A3AAB6">Unsaved work in open apps may be lost.</p>
+            <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px">
+              <button type="button" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 0; background: none; color: #F2F4F7; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Cancel</button>
+              <button type="button" style="height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: #FF6B5E; color: #1A0503; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Restart</button>
+            </div>
+          </div>
+          <p style="margin: 0; max-width: 300px; font-size: 13px; line-height: 1.55; color: #8A919E">Hold-to-confirm is the default for Restart, Shut down and Log off. The dialog is the fallback when the user turns off hold gestures in accessibility settings.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const sw = (name, hex, ring) => ({ name, hex, chip: 'height:52px;border-radius:12px;background:' + hex + ';border:1px solid ' + (ring || 'rgba(255,255,255,0.08)') });
+    return {
+      dark: [
+        sw('bg', '#0B0C0E'), sw('surface', '#15171B'), sw('surface-2', '#1E2127'), sw('border', '#262A31'),
+        sw('text', '#F2F4F7'), sw('text-2', '#A3AAB6'), sw('accent', '#4C8DFF'), sw('on-accent', '#05101F'),
+        sw('success', '#3DDC97'), sw('warning', '#F5B544'), sw('danger', '#FF6B5E'), sw('teal (alt)', '#2DD4BF')
+      ],
+      light: [
+        sw('bg', '#F4F5F7'), sw('surface', '#FFFFFF'), sw('border', '#DCE0E6'), sw('text', '#0E1116'),
+        sw('text-2', '#4A5260'), sw('accent', '#1F5FD6'), sw('success', '#0B6E44'), sw('warning', '#7A4A00')
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
